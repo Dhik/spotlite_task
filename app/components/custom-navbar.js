@@ -1,4 +1,4 @@
-'use client';
+// CustomNavbar.js
 import Link from 'next/link';
 import styles from '../styles/navbar.module.css';
 import React from 'react';
@@ -37,13 +37,13 @@ export default function CustomNavbar() {
           <p className={styles.hello}>Hello, sign in</p>
           <div className={styles.account}>
             <select className={styles.accountSign}>
-              <option value="Account">Account & Lists</option>
+              <option value="Account">Account &amp; Lists</option> {/* Replace ' with &amp; */}
             </select>
           </div>
         </div>
         <div className={`${styles.box6} ${styles.border}`}>
           <p className={styles.return}>Returns</p>
-          <p className={styles.order}>& Orders</p>
+          <p className={styles.order}>&amp; Orders</p> {/* Replace ' with &amp; */}
         </div>
         <div className={`${styles.cart} ${styles.border}`}>
           <i className="fa-solid fa-cart-shopping"></i>
@@ -56,7 +56,7 @@ export default function CustomNavbar() {
           <p className={styles.list}>All</p>
         </div>
         <div className={styles.panelOps}>
-          <p className={`${styles.ptag} ${styles.border}`}>Today's Deals</p>
+          <p className={`${styles.ptag} ${styles.border}`}>Today&apos;s Deals</p> {/* Replace ' with &apos; */}
           <p className={`${styles.ptag} ${styles.border}`}>Customer Service</p>
           <p className={`${styles.ptag} ${styles.border}`}>Registry</p>
           <p className={`${styles.ptag} ${styles.border}`}>Gift Cards</p>

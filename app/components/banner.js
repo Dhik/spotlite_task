@@ -11,7 +11,7 @@ export default function Banner() {
         </div>
 
         <ul className={styles.links}>
-          <li><a href="#">Today's Deals</a></li>
+          <li><a href="#">Today&apos;s Deals</a></li>
           <li><a href="#">Customer Service</a></li>
           <li><a href="#">Registry</a></li>
           <li><a href="#">Gift Cards</a></li>
