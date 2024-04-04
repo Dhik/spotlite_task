@@ -10,11 +10,11 @@ export default function CustomNavbar() {
         <div className={styles.navlogo}>
           <div className={`${styles.logo} ${styles.border}`}></div>
         </div>
-        <div className={`${styles.navadd} ${styles.border}`}>
+        <div className={`${styles.navbarAdd} ${styles.border}`}>
           <p className={`${styles.addfirst} icon`}>Deliver to</p>
           <div className={styles.addicon}>
             <i className="fa-solid fa-location-dot icon"></i>
-            <p className={`${styles.addsecond} icon`}>India</p>
+            <p className={`${styles.addsecond} icon`}>Indonesia</p>
           </div>
         </div>
         

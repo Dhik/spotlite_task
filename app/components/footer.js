@@ -10,12 +10,39 @@ export default function Footer() {
         <div className={styles.secondPanel}>
           <ul>
             <li><p>Get to Know Us</p></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About Amazon</a></li>
-            <li><a href="#">Investor Relations</a></li>
-            <li><a href="#">Amazon Devices</a></li>
-            <li><a href="#">Amazon Science</a></li>
+            <li>Careers</li>
+            <li>Blog</li>
+            <li>About Amazon</li>
+            <li>Investor Relations</li>
+            <li>Amazon Devices</li>
+            <li>Amazon Science</li>
+          </ul>
+          <ul>
+            <li><p>Get to Know Us</p></li>
+            <li>Careers</li>
+            <li>Blog</li>
+            <li>About Amazon</li>
+            <li>Investor Relations</li>
+            <li>Amazon Devices</li>
+            <li>Amazon Science</li>
+          </ul>
+          <ul>
+            <li><p>Get to Know Us</p></li>
+            <li>Careers</li>
+            <li>Blog</li>
+            <li>About Amazon</li>
+            <li>Investor Relations</li>
+            <li>Amazon Devices</li>
+            <li>Amazon Science</li>
+          </ul>
+          <ul>
+            <li><p>Get to Know Us</p></li>
+            <li>Careers</li>
+            <li>Blog</li>
+            <li>About Amazon</li>
+            <li>Investor Relations</li>
+            <li>Amazon Devices</li>
+            <li>Amazon Science</li>
           </ul>
           {/* Repeat for other lists */}
         </div>

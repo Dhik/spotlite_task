@@ -37,15 +37,15 @@
 .addfirst {
   color: #cccccc;
   font-size: 12px;
-  margin-left: 16px;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .addsecond {
   font-size: 14px;
-  margin-left: 3px;
   font-weight: 700;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .addicon {
@@ -93,6 +93,9 @@
 
 .searchInput {
   border: none;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
 }
 
 .searchIcon {
@@ -131,7 +134,7 @@
 
 .hello {
   font-size: 12px;
-  margin-left: 4px;
+  margin-bottom: 0;
 }
 
 .accountSign {
@@ -140,15 +143,18 @@
   background: transparent;
   color: white;
   border: none;
+  margin-bottom: 0;
 }
 
 .return {
   font-size: 12px;
+  margin-bottom: 0;
 }
 
 .order {
   font-size: 14px;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .cart i {
@@ -208,8 +214,16 @@
 
 /* Main Section */
 .main {
-  background-image: url(https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg);
-  height: 400px;
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/kindle-content-smeghn/2024/KBD0401_Discount/KBHP_1500x300_EN.jpg);
+  height: 250px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.main2 {
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/books/editorial/BHP/CHP/Desk_BHP_1500x300-marl.jpg);
+  height: 250px;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -231,34 +245,33 @@
   color: #007185;
   text-decoration: none;
 }
-
+.footer{
+  margin-top: 15px;
+}
 .shop {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-gap: 16px; /* Adjust as needed */
   background-color: #e2e7e6;
 }
 
 .box {
   height: 400px;
-  width: 23%;
   background-color: white;
   padding: 20px 0px 15px;
-  margin: 8px;
-}
-
-.shop1 {
-  font-size: 16px;
+  border: 1px solid black; /* Border line */
 }
 
 .box1Img {
-  height: 300px;
-  background-size: cover;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;  
 }
 
-.box1Content {
+.box1-content {
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -271,7 +284,7 @@
 
 /* Footer */
 
-.firstpanel {
+.firstPanel {
   height: 50px;
   background-color: #232f3e;
   color: white;
@@ -281,7 +294,7 @@
   display: flex;
 }
 
-.secondpanel {
+.secondPanel {
   background-color: #333;
   color: white;
   height: 400px;
@@ -291,7 +304,7 @@
 
 
 
-.thirdpanel {
+.thirdPanel {
   background-color: #333;
   color: white;
   border-top: 0.5px solid #848688;
@@ -309,12 +322,12 @@
   width: 100px;
 }
 
-.select-op {
+.selectOptions {
   margin-left: 55px;
   display: flex;
 }
 
-.select-op select {
+.selectOptions select {
   background: transparent;
   color: #cccccc;
   font-size: 13px;
@@ -345,4 +358,98 @@
 
 .copyright {
   margin-top: 5px;
+}
+
+.navbarAdd {
+  color: #cccccc;
+  font-size: 12px;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1100px; /* Adjust as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 20px; /* Add padding to the sides */
+}
+.title {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  margin-bottom: 0;
+}
+.writer {
+  text-align: center;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  margin-bottom: 0;
+}
+.price {
+  text-align: center;
+  color:rgb(142, 16, 16);
+  font-family: "Amazon Ember", Arial, sans-serif;
+  margin-bottom: 0;
+}
+
+/* For screens up to 767px (typical mobile devices) */
+@media only screen and (max-width: 767px) {
+  /* Navbar */
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+  .navlogo {
+    margin-bottom: 10px;
+  }
+  .search1, .navSearch {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .languageoption {
+    display: none; /* Hide language option on mobile */
+  }
+  .accountSign {
+    margin-top: 10px;
+  }
+
+  /* Second Nav */
+  .secondNav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+  .allicon {
+    margin: 5px;
+  }
+
+  /* Main Section */
+  .main, .main2 {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  /* Footer */
+  .firstPanel, .thirdPanel, .panel4 {
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+  .secondPanel {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .selectOptions {
+    margin-left: 0;
+  }
+}
+
+/* For screens between 768px and 991px (medium-sized tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Adjust styles as needed */
+}
+
+/* For screens larger than 991px (typical desktop screens) */
+@media only screen and (min-width: 992px) {
+  /* Adjust styles as needed */
 }

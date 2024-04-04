@@ -5,41 +5,47 @@ export default function Content() {
   return (
     <main>
       <div className={styles.main}>
-        <div className={styles.msg}>
-          <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#">Click here to go to amazon.in</a></p>
-        </div>
       </div>
+      <div className={styles.main2}>
+      </div>
+      <div className={styles.container}>
       <div className={styles.shop}>
         <div className={`${styles.shop1} ${styles.box}`}>
           <div className={styles['box1-content']}>
-            <h2>Toys Under $30</h2>
-            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/September/DashboardCards/Fuji_Dash_Toys_1X._SY304_CB639759658_.jpg)" }}></div>
-            <p><a href="#">Shop now</a></p>
+            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)" }}></div>
+            <h2 className={styles.title}>Toys Under $30</h2>
+            <p className={styles.writer}>Writer</p>
+            <p className={styles.price}>$19.78</p>
           </div>
         </div>
-        <div className={`${styles.shop2} ${styles.box}`}>
+        <div className={`${styles.shop1} ${styles.box}`}>
           <div className={styles['box1-content']}>
-            <h2>Deals & Promotions</h2>
-            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/September/DashboardCards/Fuji_Dash_SmartWatch_1X._SY304_CB639922137_.jpg)" }}></div>
-            <p><a href="#">Shop now</a></p>
+            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)" }}></div>
+            <h2 className={styles.title}>Toys Under $30</h2>
+            <p className={styles.writer}>Writer</p>
+            <p className={styles.price}>$19.78</p>
           </div>
         </div>
-        <div className={`${styles.shop3} ${styles.box}`}>
+        <div className={`${styles.shop1} ${styles.box}`}>
           <div className={styles['box1-content']}>
-            <h2>Health & Personal Care</h2>
-            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2022/February/DashboardCards/GW_CONS_AUS_HPC_HPCEssentials_CatCard_Desktop1x._SY304_CB627424361_.jpg)" }}></div>
-            <p><a href="#">Shop now</a></p>
+            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)" }}></div>
+            <h2 className={styles.title}>Toys Under $30</h2>
+            <p className={styles.writer}>Writer</p>
+            <p className={styles.price}>$19.78</p>
           </div>
         </div>
-        <div className={`${styles.shop4} ${styles.box}`}>
+        <div className={`${styles.shop1} ${styles.box}`}>
           <div className={styles['box1-content']}>
-            <h2>New arrivals in Toys</h2>
-            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/September/DashboardCards/Fuji_Dash_Toys_1X._SY304_CB639759658_.jpg)" }}></div>
-            <p><a href="#">Shop now</a></p>
+            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)" }}></div>
+            <h2 className={styles.title}>Toys Under $30</h2>
+            <p className={styles.writer}>Writer</p>
+            <p className={styles.price}>$19.78</p>
           </div>
         </div>
         {/* Repeat for other shop items */}
       </div>
+      </div>
+      
     </main>
   );
 }
