@@ -38,7 +38,7 @@ export default function Home() {
       <CustomNavbar /> {/* Render the Navbar component */}
       <Content /> {/* Render the Content component */}
       <Layout>
-        <BookList /> {/* Render the BookList component instead of ToDoList */}
+        {/* <BookList /> Render the BookList component instead of ToDoList */}
       </Layout>
       <Footer /> {/* Render the Footer component */}
     </div>
