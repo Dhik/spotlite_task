@@ -1,22 +1,6 @@
-// import Image from "next/image";
-// import Head from 'next/head';
-// import Layout from './components/layout';
-// import ToDoList from './components/todo-list';
-
-// export default function Home() {
-//   return (
-//     <div>
-//       <Head>
-//         <title>Full Stack Book To Do</title>
-//         <meta name="description" content="Full Stack Book To Do" />
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-//       <Layout>
-//         <ToDoList />
-//       </Layout>
-//     </div>
-//   );
-// }
+'use client';
+// Home.js
+import React, { useState } from 'react';
 
 import Image from "next/image";
 import Head from 'next/head';
@@ -26,8 +10,16 @@ import CustomNavbar from './components/custom-navbar';
 import Banner from "./components/banner";
 import Footer from "./components/footer";
 import Content from "./components/content";
+import BookList2 from "./components/book-list2";
 
 export default function Home() {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
+  };
+
   return (
     <div>
       <Head>
@@ -35,11 +27,9 @@ export default function Home() {
         <meta name="description" content="Full Stack Book List" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CustomNavbar /> {/* Render the Navbar component */}
+      <CustomNavbar onSearch={handleSearch}/> {/* Render the Navbar component */}
       <Content /> {/* Render the Content component */}
-      <Layout>
-        {/* <BookList /> Render the BookList component instead of ToDoList */}
-      </Layout>
+      <BookList searchTerm={searchTerm}/> 
       <Footer /> {/* Render the Footer component */}
     </div>
   );

@@ -1,30 +1,24 @@
 import Image from 'next/image';
-import styles from '../styles/todo.module.css';
+import styles from '../styles/navbar.module.css';
 
 export default function Book(props) {
   const { book, onChange, onDelete } = props;
 
   return (
-    <div className={styles.bookRow} key={book.id}>
-      <input
-        className={styles.bookCheckbox}
-        name="completed"
-        type="checkbox"
-        checked={book.completed} // Assuming book.completed is a boolean value
-        onChange={(e) => onChange(e, book.id)}
-      ></input>
-      <input
-        className={styles.bookInput}
-        autoComplete="off"
-        name="title" // Assuming you want to edit the title
-        type="text"
-        value={book.title}
-        onChange={(e) => onChange(e, book.id)}
-      ></input>
-      {/* Assuming other book information like author, cover image, etc. are displayed here */}
-      <button className={styles.deleteBtn} onClick={() => onDelete(book.id)}>
-        <Image src="/material-symbols_delete-outline-sharp.svg" width="24" height="24" />
-      </button>
+    <div className={styles.container}>
+      <div className={styles.shop}>
+      <div key={book.id}>
+      <div className={`${styles.shop1} ${styles.box}`}>
+          <div className={styles['box1-content']}>
+            <div className={styles.box1Img} style={{ backgroundImage: "url(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)" }}></div>
+            <h2 className={styles.title}>{book.title}</h2>
+            <p className={styles.writer}>{book.writer}</p>
+            <p className={styles.price}>{book.point}</p>
+          </div>
+        </div>
     </div>
+      </div>
+    </div>
+    
   );
 }

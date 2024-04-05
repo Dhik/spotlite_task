@@ -1,9 +1,16 @@
 // CustomNavbar.js
-import Link from 'next/link';
+'use client';
+// CustomNavbar.js
+import React, { useState } from 'react';
 import styles from '../styles/navbar.module.css';
-import React from 'react';
 
-export default function CustomNavbar() {
+export default function CustomNavbar({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = () => {
+    onSearch(searchTerm);
+  };
+
   return (
     <header>
       <div className={styles.navbar}>
@@ -17,14 +24,19 @@ export default function CustomNavbar() {
             <p className={`${styles.addsecond} icon`}>Indonesia</p>
           </div>
         </div>
-        
         <div className={styles.navSearch}>
           <select className={styles.searchOption1}>
             <option value="All" className={styles.searchOption2}>All</option>
           </select>
-          <input type="text" placeholder="Search Amazon" className={styles.searchInput} />
+          <input
+            type="text"
+            placeholder="Enter book title"
+            value={searchTerm}
+            className={styles.searchInput}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <div className={styles.searchIcon}>
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <button onClick={handleSearch} className="fa-solid fa-magnifying-glass"></button>
           </div>
         </div>
         <div className={`${styles.languageoption} ${styles.border}`}>
@@ -37,13 +49,13 @@ export default function CustomNavbar() {
           <p className={styles.hello}>Hello, sign in</p>
           <div className={styles.account}>
             <select className={styles.accountSign}>
-              <option value="Account">Account &amp; Lists</option> {/* Replace ' with &amp; */}
+              <option value="Account">Account &amp; Lists</option>
             </select>
           </div>
         </div>
         <div className={`${styles.box6} ${styles.border}`}>
           <p className={styles.return}>Returns</p>
-          <p className={styles.order}>&amp; Orders</p> {/* Replace ' with &amp; */}
+          <p className={styles.order}>&amp; Orders</p>
         </div>
         <div className={`${styles.cart} ${styles.border}`}>
           <i className="fa-solid fa-cart-shopping"></i>
@@ -56,7 +68,7 @@ export default function CustomNavbar() {
           <p className={styles.list}>All</p>
         </div>
         <div className={styles.panelOps}>
-          <p className={`${styles.ptag} ${styles.border}`}>Today&apos;s Deals</p> {/* Replace ' with &apos; */}
+          <p className={`${styles.ptag} ${styles.border}`}>Today&apos;s Deals</p>
           <p className={`${styles.ptag} ${styles.border}`}>Customer Service</p>
           <p className={`${styles.ptag} ${styles.border}`}>Registry</p>
           <p className={`${styles.ptag} ${styles.border}`}>Gift Cards</p>

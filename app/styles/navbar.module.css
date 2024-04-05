@@ -367,8 +367,7 @@
   margin-bottom: 0;
   padding: 0;
 }
-.container {
-  max-width: 1100px; /* Adjust as needed */
+.container { /* Adjust as needed */
   margin: 0 auto; /* Center the container horizontally */
   padding: 0 20px; /* Add padding to the sides */
 }
@@ -388,16 +387,18 @@
   color:rgb(142, 16, 16);
   font-family: "Amazon Ember", Arial, sans-serif;
   margin-bottom: 0;
+  font-size: 20px;
+}
+.tags {
+  font-size: 13px;
 }
 
-/* For screens up to 767px (typical mobile devices) */
-@media only screen and (max-width: 767px) {
+/* For screens up to 450px (typical mobile devices) */
+@media only screen and (max-width: 450px) {
   /* Navbar */
   .navbar {
-    height: auto;
     flex-direction: column;
     align-items: stretch;
-    padding: 10px;
   }
   .navlogo {
     margin-bottom: 10px;
@@ -417,7 +418,6 @@
   .secondNav {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
   }
   .allicon {
     margin: 5px;
@@ -430,7 +430,6 @@
 
   /* Footer */
   .firstPanel, .thirdPanel, .panel4 {
-    height: auto;
     padding: 10px;
     text-align: center;
   }
@@ -439,17 +438,88 @@
     align-items: center;
     padding: 10px;
   }
-  .selectOptions {
-    margin-left: 0;
-  }
 }
 
-/* For screens between 768px and 991px (medium-sized tablets) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+/* For screens larger than 450px and up to 991px */
+@media only screen and (min-width: 451px) and (max-width: 991px) {
   /* Adjust styles as needed */
+  .shop {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
 }
 
 /* For screens larger than 991px (typical desktop screens) */
 @media only screen and (min-width: 992px) {
   /* Adjust styles as needed */
+  .shop {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+  }
+}
+/* For screens between 451px and 991px */
+@media only screen and (min-width: 451px) and (max-width: 991px) {
+  /* Navbar */
+  .navbar {
+    height: auto;
+    padding: 10px;
+  }
+  .navlogo {
+    margin-bottom: 10px;
+  }
+  .search1, .navSearch {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .languageoption {
+    display: none; /* Hide language option on medium screens */
+  }
+  .accountSign {
+    margin-top: 10px;
+  }
+
+  /* Second Nav */
+  .secondNav {
+    padding: 10px;
+  }
+
+  /* Main Section */
+  .main, .main2 {
+    height: 200px; /* Adjust height for medium screens */
+  }
+
+  /* Footer */
+  .firstPanel, .thirdPanel, .panel4 {
+    padding: 10px;
+    text-align: center;
+  }
+  .secondPanel {
+    padding: 10px;
+  }
+}
+
+/* For screens larger than 991px (typical desktop screens) */
+@media only screen and (min-width: 992px) {
+  /* Adjust styles as needed */
+  .shop {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+  }
+}
+.headerBook {
+  padding: 10px;
+}
+
+
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 400px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.bookList {
+  flex: 1;
+  padding: 20px;
 }

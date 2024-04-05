@@ -1,49 +1,38 @@
 'use client';
-import styles from '../styles/todo-list.module.css';
+import styles from '../styles/navbar.module.css';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { debounce } from 'lodash';
 import Book from './book';
+import SearchBook from './search-book';
+import Sidebar from './sidebar';
 
-export default function BookList() {
-  const [books, setBooks] = useState(null);
+export default function BookList({searchTerm}) {
+  const [books, setBooks] = useState([]);
   const [mainInput, setMainInput] = useState('');
   const [filter, setFilter] = useState(undefined); // Initialize filter state
+  const [titleFilter, setTitleFilter] = useState('');
 
   const didFetchRef = useRef(false);
 
   useEffect(() => {
-    if (!didFetchRef.current) {
-      didFetchRef.current = true;
+    if (searchTerm) {
+      fetchBooks(searchTerm);
+    } else {
       fetchBooks();
     }
-  }, []);
+  }, [searchTerm]);
 
-  async function fetchBooks(completed) {
+  async function fetchBooks(searchTerm = '') {
     let path = '/books';
-    if (completed !== undefined) {
-      path = `/books?completed=${completed}`;
+    if (searchTerm) {
+      path = `/books/search/${encodeURIComponent(searchTerm)}`;
     }
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + path);
-    const json = await res.json();
-    setBooks(json);
+    const data = await res.json();
+    setBooks(data);
   }
 
   const debouncedUpdateBook = useCallback(debounce(updateBook, 500), []);
-
-  function handleBookChange(e, id) {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    const copy = [...books];
-    const idx = books.findIndex((book) => book.id === id);
-    const changedBook = {
-      ...books[idx],
-      [name]: value,
-    };
-    copy[idx] = changedBook;
-    debouncedUpdateBook(changedBook);
-    setBooks(copy);
-  }
 
   async function updateBook(book) {
     const data = {
@@ -113,30 +102,35 @@ export default function BookList() {
     fetchBooks(value);
   }
 
+  function handleTitleFilterChange(title) {
+    setTitleFilter(title);
+    fetchBooks(filter);
+  }
+
   return (
-    <div className={styles.container}>
-      <div className={styles.mainInputContainer}>
-        <input
-          className={styles.mainInput}
-          placeholder="Enter book title"
-          value={mainInput}
-          onChange={(e) => handleMainInputChange(e)}
-          onKeyDown={handleKeyDown}
-        ></input>
-      </div>
+    <div>
+      <h4 className={styles.headerBook}>Book List</h4>
+      {/* <SearchBook onSearch={handleTitleFilterChange} /> Pass the handler for title filter */}
       {!books && <div>Loading...</div>}
       {books && (
-        <div>
-          {books.map((book) => {
-            return <Book key={book.id} book={book} onDelete={handleDeleteBook} onChange={handleBookChange} />;
-          })}
+      <div className={styles.container}>
+        <Sidebar />
+          
+        <div className={styles.shop}>
+          {books.map((book) => (
+            <div key={book.id} className={`${styles.shop1} ${styles.box}`}>
+              <div className={styles['box1-content']}>
+                <div className={styles.box1Img} style={{ backgroundImage: `url(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)` }}></div>
+                <h2 className={styles.title}>{book.title}</h2>
+                <p className={styles.writer}>Writer: {book.writer}</p>
+                <p className={styles.price}>{book.point}</p>
+                <p className={styles.tags}>Tags: {book.tag.join(', ')}</p>
+              </div>
+            </div>
+          ))}
         </div>
+    </div>
       )}
-      <div className={styles.filters}>
-        <button className={`${styles.filterBtn} ${filter === undefined && styles.filterActive}`} onClick={() => handleFilterChange()}>All</button>
-        <button className={`${styles.filterBtn} ${filter === false && styles.filterActive}`} onClick={() => handleFilterChange(false)}>Active</button>
-        <button className={`${styles.filterBtn} ${filter === true && styles.filterActive}`} onClick={() => handleFilterChange(true)}>Completed</button>
-      </div>
     </div>
   );
 }
